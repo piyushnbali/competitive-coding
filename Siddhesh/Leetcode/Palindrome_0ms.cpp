@@ -1,3 +1,5 @@
+/* converting int to string using to_string and looping through it takes 6.1 ms to run but if I reverse int using a while loop, it runs in 0ms! */
+
 class Solution {
 public:
     bool isPalindrome(int x) {
