@@ -1,1 +1,0 @@
-This is folder of AIMAN SHIVANI
