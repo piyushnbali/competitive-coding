@@ -1,2 +1,2 @@
 # competitive-coding
-This repo contains competitive programming problems
+This repo is competitive coding programmers of viit
