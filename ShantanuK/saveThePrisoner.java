@@ -5,9 +5,9 @@ public class saveThePrisoner {
 
     public static void main(String[] args){      
       Scanner sc = new Scanner(System.in);
-        int t = input.nextInt();
+        int t = sc.nextInt();
         
-        for(int i = 0; i < T; i++)
+        for(int i = 0; i < t; i++)
         {
        int n = sc.nextInt();
        int c = sc.nextInt();
