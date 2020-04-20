@@ -48,4 +48,3 @@ int main()
 }  
   
 // This is code is contributed by rathbhupendra 
-s
