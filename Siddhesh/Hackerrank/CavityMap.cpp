@@ -2,8 +2,6 @@
 
 using namespace std;
 
-// Complete the cavityMap function below.
-
 int main()
 {
     int size,i,j;
