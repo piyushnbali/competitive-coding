@@ -26,36 +26,70 @@ ll expo(ll x, ll y) {ll res=1;x=x%mod;while(y>0){if(y&1)res=(1ll*res*x)%mod;
     y=y>>1;x=(1ll*x*x)%mod;} return res;}
 ll ncr(ll n,ll r){ ll res=1; if(r>n-r)r=n-r; for(ll i=0;i<r;i++) {  res*=n-i;  res/=i+1; } return res;}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-class Node
-{
-    public:
- ll n;
- Node * next;
- Node(int a)
- {
-     this->n=a;
-     
- }
- 
-};
+int check(string str) 
+{ 
+    int n = str.length(); 
+    ll oddDigSum = 0, evenDigSum = 0; 
+    for (int i=0; i<n; i++) 
+    { 
+        if (i%2 == 0) 
+            oddDigSum += (str[i]-'0'); 
+        else
+            evenDigSum += (str[i]-'0'); 
+    } 
+  
+    return ((oddDigSum - evenDigSum) % 11 == 0); 
+} 
+
 signed main()
 {
-    ll N,K;
-    test
-    {
-    
-    N=0,K=0;
-    cin>>N>>K;
-    ll v=(((2*K)%N)+1);
-    forci(0,N)
-    {
-         
-
-    }
-    }
-    
-
+     string y="YES";
+     string n="NO";
+     string str;
+     test{
+         cin>>str;
+         check(str)?  cout << y: cout << n; 
+         cout<<"\n";
+     }
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 
