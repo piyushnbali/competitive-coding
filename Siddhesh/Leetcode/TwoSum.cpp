@@ -1,6 +1,8 @@
 // First approach was brute force... two nested for loops -> O(n^2)
 
 // Below is a better approach which uses map
+// KEY -> NUMBER
+// VALUE -> INDEX
 // Used **unordered_map** because look-up i.e. find() takes constant time O(1) most of the times...
 //  whereas find() in map requires O(logn) time.
 
