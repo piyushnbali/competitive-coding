@@ -16,3 +16,21 @@ public:
 };
 
 //2. Without maintaining order
+
+class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+        int index=0,size=nums.size(),i=0;
+        while(i<size){
+          if (nums[i]==val){
+              nums[i]=nums[size-1];
+              --size;
+              ++index;
+          }
+            else{
+                ++i;
+            }
+        }
+        return size;
+    }
+};
