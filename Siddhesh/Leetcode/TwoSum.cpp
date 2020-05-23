@@ -4,7 +4,7 @@
 // KEY -> NUMBER   |  because find() works only for key NOT value!
 // VALUE -> INDEX  |
 // Used **unordered_map** because look-up i.e. find() takes constant time O(1) most of the times...
-//  whereas find() in map requires O(logn) time.
+//  Whereas find() in map requires O(logn) time.
 
 /* 
 **IMP**:
