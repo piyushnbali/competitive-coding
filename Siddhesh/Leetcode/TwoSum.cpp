@@ -9,7 +9,7 @@
 /* 
 **IMP**:
 The function below should return vector but I have returned {values}... and it works!
-Thus avoided using vector.
+Thus avoided using vector
 */
 
 class Solution {
