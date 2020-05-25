@@ -9,6 +9,7 @@
             
      WHICHEVER IS BIGGER AMONG v1[m-1] and v2[n-1]  WILL BE ADDED TO THE m+n-1 th INDEX;
 */
+// O(n) time, O(1) space
 class Solution {
 public:
     void merge(vector<int>& v1, int m, vector<int>& v2, int n) {
@@ -36,5 +37,36 @@ public:
                 --m;
             }
         }
+    }
+};
+
+
+// OTHER APPROACH - CREATING A COPY OF FIRST VECTOR - O(n) space
+class Solution {
+public:
+    void merge(vector<int>& v3, int m, vector<int>& v2, int n) {
+        vector<int> v1=v3;
+        int i=0,j=0;
+        while (j<n || i<m){
+            if(i>=m){
+                v3[i+j]=v2[j];
+                ++j;
+                continue;
+            }
+            if(j>=n){
+                v3[i+j]=v1[i];
+                ++i;
+                continue;
+            }
+            if(v1[i]<v2[j]){
+                v3[i+j]=v1[i];
+                ++i;
+            }
+            else{
+                v3[i+j]=v2[j];
+                ++j;
+            }
+        }
+        
     }
 };
