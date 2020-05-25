@@ -36,3 +36,30 @@ int main(){
   cout<<best_sum;
   return 0;
 }
+
+// Determining indices of starting and ending position of subarray
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  vector<int> v={1,2,-1,4,5,-1};
+  int curr_sum=0,best_sum=0,s_i=0,e_i=0;
+  for(int i=0;i<v.size();++i){
+    if(curr_sum<0){
+      curr_sum=v[i];
+      s_i=i;
+    }
+    else{
+      curr_sum+=v[i];
+    }
+    if(best_sum<curr_sum){
+      best_sum=curr_sum;
+      e_i=i;
+    }
+  }
+  cout<<best_sum<<"\ns_i="<<s_i<<"\ne_i="<<e_i;
+  //best_sum=11
+  //s_i=0
+  //e_i=4
+  return 0;
+}
