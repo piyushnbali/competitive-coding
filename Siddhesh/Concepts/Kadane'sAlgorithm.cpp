@@ -15,3 +15,24 @@ int main(){
   // Therefore, MaxSum=11
   return 0;
 }
+
+// Without DP - Using Two Variables
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  vector<int> v={1,2,-1,4,5,-1};
+  int curr_sum=0,best_sum=0;
+  for(int i=0;i<v.size();++i){
+    // We add only when the previous sum is positive
+    if(curr_sum<0){
+      curr_sum=v[i];
+    }
+    else{
+      curr_sum+=v[i];
+    }
+    best_sum=max(best_sum,curr_sum);
+  }
+  cout<<best_sum;
+  return 0;
+}
