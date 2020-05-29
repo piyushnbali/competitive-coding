@@ -1,5 +1,7 @@
 // We have to delete all the occurrences of the element if it occurrs more than once in the list.
 // LIKE 1-2-3-3-3-4 BECOMES 1-2-4
+// Used 3 pointers i.e. t,f,s for simplicity; t stays back while f and s traverse ahead
+// Can be done only using two pointers where s=f->next!
 
 class Solution {
 public:
