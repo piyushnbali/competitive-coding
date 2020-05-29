@@ -27,5 +27,5 @@ int main(){
 	for(int i=0;i<v.S;++i){
 		cout<<v[i];
 	}
-    return 0;
+  return 0;
 }
