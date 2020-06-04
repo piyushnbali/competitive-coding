@@ -1,4 +1,4 @@
-//Link :
+//Link : https://github.com/siddheshkothadi/competitive-coding/blob/master/Siddhesh/Notes/FindAllNumbersDisappearedInAnArray.jpg
 
 class Solution {
 public:
