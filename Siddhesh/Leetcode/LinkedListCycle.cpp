@@ -22,3 +22,23 @@ public:
         return 1;
     }
 };
+
+// With head as f and s
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        if(head==nullptr) return 0;
+        ListNode *f=head,*s=head;
+        bool first=1;
+        while(true){
+            if(s->next==nullptr || s->next->next==nullptr) return 0;
+            if(f==s && !first){
+                return 1;
+            }
+            first=0;
+            f=f->next;
+            s=s->next->next;
+        }
+        return 0;
+    }
+};
