@@ -1,6 +1,13 @@
-// APPROACH: Similar to basic approach of Adding two sorted arrays 
-//  But instead of traversing from back we have to traverse from the beginning of both lists.
-
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
@@ -9,11 +16,11 @@ public:
         ListNode *ans=nullptr,*temp,*ptr;
         while(l1!=nullptr && l2!=nullptr){
             if(l1->val>l2->val){
-                temp = new ListNode(l2->val);
+                temp = l2;
                 l2=l2->next;
             }
             else{
-                temp = new ListNode(l1->val);
+                temp = l1;
                 l1=l1->next;
             }
             if(ans==nullptr){
@@ -27,14 +34,14 @@ public:
         }
         if(l1!=nullptr){
             while(l1!=nullptr){
-                ans->next= new ListNode(l1->val);
+                ans->next= l1;
                 ans=ans->next;
                 l1=l1->next;
             }
         }
         else if(l2!=nullptr){
             while(l2!=nullptr){
-                ans->next=new ListNode(l2->val);
+                ans->next=l2;
                 ans=ans->next;
                 l2=l2->next;
             }
