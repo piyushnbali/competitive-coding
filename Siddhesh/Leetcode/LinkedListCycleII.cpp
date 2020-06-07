@@ -1,12 +1,6 @@
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
- /*
+// FLOYD'S ALGORITHM
+// LINK:: https://youtu.be/9YTjXqqJEFE
+/*
   APPROACH::
   FIRST FIND OUT IF THERE IS A CYCLE ... REFER TO LINKED LIST CYCLE SOLUTION
   IF THERE IS A CYCLE ::
