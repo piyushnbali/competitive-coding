@@ -9,16 +9,11 @@ public:
   }
   //head as last i.e. 5
   //consider last as head
-  
+
+  tmp=head->next;
   while(first!=nullptr){
-    if(tmp==nullptr){
-      first->next=head->next;
-      tmp=first;
-    }
-    else{
-      first->next=tmp;
-      tmp=first;
-    }
+    first->next=tmp;
+    tmp=first;
     first=second;
     if(second!=nullptr){
       second=second->next;
