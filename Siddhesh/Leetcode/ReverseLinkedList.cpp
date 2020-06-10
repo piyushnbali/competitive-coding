@@ -1,3 +1,20 @@
+// Ideal approach::
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        if(!head || !head->next) return head;
+        ListNode *curr=head,*prev=nullptr;
+        while(curr->next){
+            ListNode *nxt=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=nxt;
+        }
+        curr->next=prev;
+        return curr;
+    }
+};
+
 // USING RECURSION!
 class Solution {
 public:
@@ -10,6 +27,8 @@ public:
     }
 };
 
+
+// Non ideal approach .. moving to end of list
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
