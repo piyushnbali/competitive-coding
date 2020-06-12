@@ -38,3 +38,28 @@ public:
         return v;
     }
 };
+
+
+//RECURSION
+class Solution {
+public:
+    void recur(vector<int>& v,TreeNode *root){
+        if(root->left){
+            v.push_back(root->left->val);
+            recur(v,root->left);
+        }
+        if(root->right){
+            v.push_back(root->right->val);
+            recur(v,root->right);
+        }
+        return;
+    }
+    
+    vector<int> preorderTraversal(TreeNode* root) {
+        if(!root) return {};
+        vector<int> v;
+        v.push_back(root->val);
+        recur(v,root);
+        return v;
+    }
+};
