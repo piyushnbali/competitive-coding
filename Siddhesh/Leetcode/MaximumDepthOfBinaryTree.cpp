@@ -1,3 +1,30 @@
+//UNING QUEUE
+class Solution {
+public:
+    int maxDepth(TreeNode* root) {
+        if(!root) return 0;
+        int count=0;
+        queue<TreeNode*> q;
+        q.push(root);
+        while(!q.empty()){
+            int size=q.size();
+            for(int i=0;i<size;++i){
+                root=q.front();
+                q.pop();
+                if(root->left){
+                    q.push(root->left);
+                }
+                if(root->right){
+                    q.push(root->right);
+                }
+            }
+            ++count;
+        }
+        return count;
+    }
+};
+
+//RECURSION
 class Solution {
 public:
     int recur(TreeNode* root,int count){
