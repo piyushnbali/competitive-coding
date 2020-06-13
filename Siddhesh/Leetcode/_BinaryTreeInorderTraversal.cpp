@@ -1,5 +1,26 @@
 //MORRIS TRAVERSAL REMAINING
 
+//ITERATION- HARD TO IMPLEMENT
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        if(!root) return {};
+        TreeNode *curr=root;
+        vector<int> v;
+        stack<TreeNode*> s;
+        while(curr || !s.empty()){
+            while(curr){
+                s.push(curr);
+                curr=curr->left;
+            }
+            curr=s.top();
+            s.pop();
+            v.push_back(curr->val);
+            curr=curr->right;
+        }
+        return v;
+    }
+};
 //RECURSION
 class Solution {
 public:
