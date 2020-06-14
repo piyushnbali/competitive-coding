@@ -32,6 +32,8 @@ public:
                 top->next=nxt;
                 if(top->left){
                     q.push(top->left);
+                }
+                if(top->right){
                     q.push(top->right);
                 }
             }
