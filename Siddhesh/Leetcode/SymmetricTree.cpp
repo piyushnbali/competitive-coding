@@ -21,3 +21,52 @@ public:
         return recur(root->left,root->right);
     }
 };
+
+
+//USING QUEUE:: 
+class Solution {
+public:
+    bool isSymmetric(TreeNode* root) {
+        if(!root) return 1;
+        if(!root->left && !root->right) return 1;
+        if(!root->left && root->right || root->left && !root->right) return 0;
+        queue<TreeNode*> ql,qr;
+        if(root->left->val==root->right->val){
+            ql.push(root->left);
+            qr.push(root->right);   
+        }
+        else{
+            return 0;
+        }
+        while(!ql.empty() || !qr.empty()){
+            TreeNode *l=ql.front(),*r=qr.front();
+            ql.pop();
+            qr.pop();
+            if(l->left && r->right){
+                if(l->left->val==r->right->val){
+                    ql.push(l->left);
+                    qr.push(r->right);
+                }   
+                else{
+                    return 0;
+                }
+            }
+            else if(!r->right && l->left || r->right && !l->left){
+                return 0;
+            }
+            if(l->right && r->left){
+                if(l->right->val==r->left->val){
+                    ql.push(l->right);
+                    qr.push(r->left);
+                }   
+                else{
+                    return 0;
+                }
+            }
+            else if(!r->left && l->right || r->left && !l->right){
+                return 0;
+            }
+        }
+        return 1;
+    }
+};
