@@ -1,0 +1,31 @@
+# 1 "c:\\Users\\pnbal\\Desktop\\daa\\competitive-coding\\PIYUSH BALI\\.vscode\\tasks.json"
+# 1 "C:\\Users\\pnbal\\Desktop\\daa\\competitive-coding\\PIYUSH BALI//"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "c:\\Users\\pnbal\\Desktop\\daa\\competitive-coding\\PIYUSH BALI\\.vscode\\tasks.json"
+{
+ "version": "2.0.0",
+ "tasks": [
+  {
+   "type": "shell",
+   "label": "C/C++: cpp.exe build active file",
+   "command": "C:\\Mingw-w64\\mingw32\\bin\\cpp.exe",
+   "args": [
+    "-g",
+    "${file}",
+    "-o",
+    "${fileDirname}\\${fileBasenameNoExtension}.exe"
+   ],
+   "options": {
+    "cwd": "${workspaceFolder}"
+   },
+   "problemMatcher": [
+    "$gcc"
+   ],
+   "group": {
+    "kind": "build",
+    "isDefault": true
+   }
+  }
+ ]
+}

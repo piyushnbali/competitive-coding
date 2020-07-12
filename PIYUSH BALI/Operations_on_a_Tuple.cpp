@@ -27,51 +27,25 @@ ll expo(ll x, ll y) {ll res=1;x=x%mod;while(y>0){if(y&1)res=(1ll*res*x)%mod;
 ll ncr(ll n,ll r){ ll res=1; if(r>n-r)r=n-r; for(ll i=0;i<r;i++) {  res*=n-i;  res/=i+1; } return res;}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-int rec(bool act,ll a[3], ll p[3])
-{    ll c=0;
-     ll diff[3];
-        forci(0,3)
-        {
-            diff[i]=p[i]-a[i];
-        } 
-        if(diff[0]==0 && diff[1]==0 && diff[2]==0)
-        {
-            return 1;
-        }
-
-        if(act)
-        {
-            c=min(diff[0],diff[2])
-            c=min(c,diff[3]);
-            forci(0,3)
-               {
-                if(a[i]+c<=p[i])
-               {
-                   a[i]=a[i]+c;
-                }
-                }
-                ans=min(ans,rec(true,a[3],p[3]),rec(false,a[3],p[3]))
-        }else
-        {
-            forci(0,3)
-            {
-               if(a[i]*c<=p[i])
-                 {
-                      a[i]=a[i]*c;
-                }
-            }
-             ans=min(ans,rec(true,a[3],p[3]),rec(false,a[3],p[3]))
-
-        }
+solve(ll a[3],ll p[3])
+{
+    ll diff=0;
+    ll add[3];
+    ll mult[3];
+    forci(0,3)
+    {
+        diff+=p[i]-a[i]
+    }
 }
 signed main()
 {
     test{
-       
+        ll a[3];
         cin>>a[0]>>a[1]>>a[2];
-        
+        ll p[3];
         cin>>p[0]>>p[1]>>p[2];
         
+           
 
     }
 
