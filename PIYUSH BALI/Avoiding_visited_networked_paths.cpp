@@ -57,14 +57,15 @@ void factorize(long long n,vector<tuple<int,int,int>>fact[],ll i)
 
 int count(int x,int y,vector<tuple<int,int,int>>fact[],int n,int m)
 {
-
+    
+    if(x==n && y==m)
+    { 
+        return 1;}
     if(x>n || y>m )
     {
         return 0;
     }
-    if(x==n && y==m)
-    { 
-        return 1;}
+    
     if(dp[x][y]!=-1) 
     {return dp[x][y];}
 
@@ -94,7 +95,7 @@ signed main()
   // vector<ll> A[n];
    vector<tuple <int,int,int>>fact[n];
  
-   memset(dp,-1,size_t(dp));
+   memset(dp,-1,sizeof dp);
     forci(0,n)
     {
        
@@ -121,7 +122,7 @@ signed main()
         
     //     }
     //     cout<<"/n";
-    }
+    
     
   
 
