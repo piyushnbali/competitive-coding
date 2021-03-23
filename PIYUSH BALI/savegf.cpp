@@ -29,13 +29,52 @@ ll ncr(ll n,ll r){ ll res=1; if(r>n-r)r=n-r; for(ll i=0;i<r;i++) {  res*=n-i;  r
 
 signed main()
 {
-    char a;
-    cin>>a;
-    cout<<a;
+    ll n,m,a,b;
+    ll l1,l2,ene;
+    ll sta,slp;
+    ll stamina=0;
+    ll sleep=0;
+    cin>>n>>m>>a>>b;
+    ll dp[n+1][n+1];
+    memset(dp,0,sizeof(dp));
+    forci(0,m)
+    {
+          cin>>l1>>l2>>ene;
+          dp[l1][l2]=ene;
+          dp[l2][l1]=ene;
+    }
+    vector<pair<ll,ll>> sl;
+    forci(0,n)
+    {
+        cin>>sta>>slp;
+        sl.push_back(make_pair(sta,slp));
+        
+    }
 
- 
+   ll flag;
+   while(a!=b)
+   {
+       flag=1;
+       for(ll i=b;i>a;i--)
+       {
+           if(stamina>=dp[a][i] && dp[a][i]!=0)
+                   {
+                        stamina=stamina-dp[a][i];
+                         a=i;
+                        flag=0;
+                        break;
+                   }
+                    
+       }
+     if(flag)
+         {
+                      sleep=sleep+sl[a-1].second;
+                     stamina=sl[a-1].first;
+         }
 
-
+   }
+  cout<<sleep;
+  
 
 
 

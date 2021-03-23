@@ -26,12 +26,41 @@ ll expo(ll x, ll y) {ll res=1;x=x%mod;while(y>0){if(y&1)res=(1ll*res*x)%mod;
     y=y>>1;x=(1ll*x*x)%mod;} return res;}
 ll ncr(ll n,ll r){ ll res=1; if(r>n-r)r=n-r; for(ll i=0;i<r;i++) {  res*=n-i;  res/=i+1; } return res;}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+bool isedge(int a, int b,int i,int j)
+{
+    if(i<j && a>b)
+    {
+        return true;
+    }
+    return false;
+}
+int par[1000006];
+int find(int i)
+{
+    if (parent[i] == i)
+        return i;
+    return find(parent[i]);
+}
+void Union(int x, int y)
+{
+    int xset = find(parent, x);
+    int yset = find(parent, y);
+    parent[xset] = yset;
+}
 signed main()
 {
-    char a;
-    cin>>a;
-    cout<<a;
+    test
+    {
+         ll x;
+         cin>>x;
+         vi ans;
+         ll q;
+         forci(0,x){
+               cin>>q;
+               ans.pb(q);
+               }
+
+    }
 
  
 

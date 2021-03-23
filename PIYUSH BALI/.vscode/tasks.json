@@ -1,26 +1,63 @@
+//Author : 5hfT
+//data:11th Feb,2020
+//Task:shortcut to run a cpp file which will take input and show output of the programme automatically with programme runtime status such as memory comsume and execution time
 {
     "version": "2.0.0",
     "tasks": [
-        {
-            "type": "shell",
-            "label": "C/C++: cpp.exe build active file",
-            "command": "C:\\Mingw-w64\\mingw32\\bin\\cpp.exe",
-            "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
+      {
+        "label": "Compile and run",
+        "type": "shell",
+        "command": "",
+        "args": [
+          "g++",
+          "${relativeFile}",
+          "-o",
+          "test",
+          "&&",
+          "test",
+          "<",
+          "input.txt",
+          ">",
+          "output.txt"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": {
+          "owner": "cpp",
+          "fileLocation": [
+            "relative",
+            "${workspaceRoot}"
+          ],
+          "pattern": {
+            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "severity": 4,
+            "message": 5
+          }
         }
+      },
+      {
+        "type": "cppbuild",
+        "label": "C/C++: cpp.exe build active file",
+        "command": "G:\\mingw\\mingw32\\bin\\cpp.exe",
+        "args": [
+          "-g",
+          "${file}",
+          "-o",
+          "${fileDirname}\\${fileBasenameNoExtension}.exe"
+        ],
+        "options": {
+          "cwd": "G:\\mingw\\mingw32\\bin"
+        },
+        "problemMatcher": [
+          "$gcc"
+        ],
+        "group": "build",
+        "detail": "compiler: G:\\mingw\\mingw32\\bin\\cpp.exe"
+      }
     ]
-}
+  }

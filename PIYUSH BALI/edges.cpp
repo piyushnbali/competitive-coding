@@ -25,14 +25,45 @@ ll lcm(ll a,ll b) {    return (a/gcd(a,b)*b);}
 ll expo(ll x, ll y) {ll res=1;x=x%mod;while(y>0){if(y&1)res=(1ll*res*x)%mod;
     y=y>>1;x=(1ll*x*x)%mod;} return res;}
 ll ncr(ll n,ll r){ ll res=1; if(r>n-r)r=n-r; for(ll i=0;i<r;i++) {  res*=n-i;  res/=i+1; } return res;}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+vector<int> edges[100001];
+vector<bool>visited;
+int ans;
+set <int, greater <int> > s1;  
+set <int, greater <int> > s2;  
+void bfs(int u,int v)
+{   
+    visited[u]=true;
+    if(u==v)
+    {  ans=s1.size();
+       return;
+    }
+    forci(0,edges[u].size())
+    {
+        if(!(visited[edges[u][i]]))
+        {
+            bfs(edges[u][i],v,a);
+            s1.erase(edges[u][i])
+        }
+    }
+
+}
 signed main()
 {
-    char a;
-    cin>>a;
-    cout<<a;
-
+    int n,m,a,b;
+    cin>>n>>m>>a>>b;
+    int u,v;
+    visited.resize(n+1,false);
+    forci(0,m)
+    {
+        cin>>u>>v;
+        edges[u].pb(v);
+        edges[v].pb(u);
+    }
+    bfs(a,b);
+    
+   cout<<ans-1;
  
 
 

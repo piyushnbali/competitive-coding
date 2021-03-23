@@ -29,10 +29,27 @@ ll ncr(ll n,ll r){ ll res=1; if(r>n-r)r=n-r; for(ll i=0;i<r;i++) {  res*=n-i;  r
 
 signed main()
 {
-    char a;
-    cin>>a;
-    cout<<a;
+    test{
+        ll n;
+        ll x;
+        cin>>n;
+        vi arr;
+        forci(0,n)
+        {
+            cin>>x;
+            arr.push_back(x);
+        }
+        sort(arr.begin(),arr.end());
+        int ans=0;
+        forci(0,n-1)
+        {
+            if(arr[i+1]!=arr[i])
+                 ans++;
+                
+        }
+        cout<<ans+1<<endl;
 
+    }
  
 
 

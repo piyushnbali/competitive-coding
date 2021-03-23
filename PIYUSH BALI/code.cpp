@@ -22,57 +22,52 @@ using namespace std;
 
 ll gcd(ll a,ll b){    if(b==0) return a;    return gcd(b,a%b);}
 ll lcm(ll a,ll b) {    return (a/gcd(a,b)*b);}
-ll expo(ll x, ll y) {ll res=1;x=x%mod;while(y>0){if(y&1)res=(1ll*res*x)%mod;
-    y=y>>1;x=(1ll*x*x)%mod;} return res;}
+ll expo(ll x, ll y) {ll res=1;x=x;while(y>0){if(y&1)res=(1ll*res*x);
+    y=y>>1;x=(1ll*x*x);} return res;}
 ll ncr(ll n,ll r){ ll res=1; if(r>n-r)r=n-r; for(ll i=0;i<r;i++) {  res*=n-i;  res/=i+1; } return res;}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-signed main()
-{
-    char a;
-    cin>>a;
-    cout<<a;
-
- 
+  
+  
+  signed main()
 
 
+  {
 
 
+      vi ans;
+      ans.pb(0);
+      ans.pb(1);
+      forci(2,100001)
+      {
+            ans[i] = pow(3,i-2)+1 ;
+      }
+      test{
+              vi ans;
+              ll m;
+              cin>>m;
+              ll k;
+              cin>>k;
+              string q;
+              cin>>q;
+              
+              forci(0,m)
+              {
+                string s = "";
+                forcj(0,m)
+                {
+                    if(i==j)
+                      {
+                        continue;
+                      }
+                      s = s+ q[i];
+                }
+                ans.pb(stoi(s)%k);
+              }
+              sort(ans.begin(),ans.end());
+              cout<<ans[ans.size()-1]<<endl;
 
+          }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
+  }
 //https://www.youtube.com/watch?v=yl2GaxVGUaI
